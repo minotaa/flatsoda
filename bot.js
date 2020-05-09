@@ -21,7 +21,7 @@ for (const file of cmdFiles) {
 bot.on('message', async message => {
   let prefix = db.get(`${message.guild.id}.prefix`)
   if (!prefix) {
-      prefix = '_'
+      prefix = 'f!'
   }
   if (!message.content.startsWith(prefix)) return
   const command = message.content.split(' ')[0].slice(prefix.length)
