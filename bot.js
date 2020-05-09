@@ -12,18 +12,27 @@ require('dotenv').config()
 const cmdFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
 for (const file of cmdFiles) {
   const command = require(`./commands/${file}`)
-  bot.commands.set(command.name, command)
-  command.aliases.forEach(alias => {
-    bot.aliases.set(alias, command.name)
+  bot.commands.set(command.help.name, command)
+  command.help.aliases.forEach(alias => {
+    bot.aliases.set(alias, command.help.name)
   })
 }
 
 bot.on('message', async message => {
   let prefix = db.get(`${message.guild.id}.prefix`)
   if (!prefix) {
-      prefix = process.env.DEFAULT_PREFIX
+      prefix = '_'
   }
-  
+  if (!message.content.startsWith(prefix)) return
+  const command = message.content.split(' ')[0].slice(prefix.length)
+  const args = message.content.split(' ').slice(1)
+  let cmd
+  if (bot.commands.has(command)) {
+    cmd = bot.commands.get(command)
+  } else if (bot.aliases.has(command)) {
+    cmd = bot.commands.get(bot.aliases.get(command))
+  }
+  cmd.run(bot, message, args)
 })
 
 bot.on('ready', () => {
