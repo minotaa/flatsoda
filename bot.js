@@ -32,6 +32,7 @@ bot.on('message', async message => {
   } else if (bot.aliases.has(command)) {
     cmd = bot.commands.get(bot.aliases.get(command))
   }
+  console.log(`[${message.guild.name}] ${message.author.username}#${message.author.discriminator} > ${prefix}${command} ${args.toString().replace(/,/gi, ' ')}`)
   cmd.run(bot, message, args)
 })
 

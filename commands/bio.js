@@ -33,6 +33,7 @@ exports.run = (bot, message, args) => {
     }    
 
     e.setImage(settings.banner)
+    e.setColor('#36393f')
     message.channel.send(e)
     
   })
