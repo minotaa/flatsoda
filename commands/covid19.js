@@ -31,7 +31,7 @@ exports.run = (bot, message, args) => {
                     .setTitle(':x: Invalid country')
                     .setColor('#36393f')
                     .setDescription('You require a valid country to search thru data.')
-                    .setFooter('© flatsoda | Made by minota#4433', 'https://media.discordapp.net/attachments/708469833754345535/708558255022014484/cup-with-straw_1f964.png')
+                    .setFooter('© flatsoda | Made by mino#1308', 'https://media.discordapp.net/attachments/708469833754345535/708558255022014484/cup-with-straw_1f964.png')
                     .setTimestamp()
                 return message.channel.send(e)
             } else {
@@ -49,7 +49,7 @@ exports.run = (bot, message, args) => {
                     .addField(':test_tube: Total Tests', numberWithCommas(res.data.totalTests), true)
                     .addField(':test_tube: Tests Per 1 Mil', numberWithCommas(res.data.testsPerOneMillion), true)
                     .addField(':skull_crossbones: Deaths Per 1 Mil', numberWithCommas(res.data.casesPerOneMillion), true)
-                    .setFooter('© flatsoda | Made by minota#4433', 'https://media.discordapp.net/attachments/708469833754345535/708558255022014484/cup-with-straw_1f964.png')
+                    .setFooter('© flatsoda | Made by mino#1308', 'https://media.discordapp.net/attachments/708469833754345535/708558255022014484/cup-with-straw_1f964.png')
                     .setTimestamp()
                 return message.channel.send(e)
             }

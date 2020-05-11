@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const db = require('quick.db')
 
 const bot = new discord.Client()
+var permissions = new db.table('permissions')
 
 bot.commands = new discord.Collection()
 bot.aliases = new discord.Collection()
@@ -33,7 +34,8 @@ bot.on('message', async message => {
     cmd = bot.commands.get(bot.aliases.get(command))
   }
   console.log(`[${message.guild.name}] ${message.author.username}#${message.author.discriminator} > ${prefix}${command} ${args.toString().replace(/,/gi, ' ')}`)
-  cmd.run(bot, message, args)
+  var perms = permissions.get(`${message.author.id}.permissions`)
+  cmd.run(bot, message, args, perms)
 })
 
 bot.on('ready', () => {

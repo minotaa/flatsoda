@@ -15,7 +15,7 @@ exports.run = (bot, message, args) => {
                 .setDescription(`[${data.title}](https://xkcd.com/${data.num})`)
                 .setColor('#36393f')
                 .setImage(data.img)
-                .setFooter(`${data.alt} | © flatsoda | Made by minota#4433`, 'https://media.discordapp.net/attachments/708469833754345535/708558255022014484/cup-with-straw_1f964.png')
+                .setFooter(`${data.alt} | © flatsoda | Made by mino#1308`, 'https://media.discordapp.net/attachments/708469833754345535/708558255022014484/cup-with-straw_1f964.png')
                 .setTimestamp()
             message.channel.send(e)
         })

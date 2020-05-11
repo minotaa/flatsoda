@@ -11,7 +11,7 @@ exports.run = (bot, message, args) => {
                 .setTitle(':x: No question')
                 .setColor('#36393f')
                 .setDescription('Well, the 8-ball is completely random, but let\'s give into the illusion being real by asking a question.')
-                .setFooter('© flatsoda | Made by minota#4433', 'https://media.discordapp.net/attachments/708469833754345535/708558255022014484/cup-with-straw_1f964.png')
+                .setFooter('© flatsoda | Made by mino#1308', 'https://media.discordapp.net/attachments/708469833754345535/708558255022014484/cup-with-straw_1f964.png')
                 .setTimestamp()
         return message.channel.send(e)
     }

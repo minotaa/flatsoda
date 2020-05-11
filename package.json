@@ -36,6 +36,7 @@
   "homepage": "https://github.com/xMinota/flatsoda#readme",
   "dependencies": {
     "@aero/drep": "^2.0.3",
+    "@ksoft/api": "^3.1.9",
     "chalk": "^4.0.0",
     "discord.bio": "^4.0.3",
     "discord.js": "^12.2.0",
